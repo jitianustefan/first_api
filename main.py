@@ -55,6 +55,9 @@ async def response_endpoint(item: RecomendedItems):
     dataset = dataset.head(500)
     
     import re
+    import nltk 
+    #elimin cuvinte pe care nu vreau sa le includ in text ul curatat care nu sunt relevante exeplu the, a of
+    nltk.download('stopwords')
     from nltk.corpus import stopwords
     from nltk.stem.porter import PorterStemmer #elimina conjugarile verbelor si le aduce la prezent(reducem reduntantele pentru ca inseamna acelasi lucru indiferent de conjucare in cazul reviwurilor)
     #corpus = [] # lista ce contine toate review-urile curatate
