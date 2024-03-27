@@ -1,4 +1,10 @@
 # -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 25 15:11:57 2024
+
+@author: jitia
+"""
+
 
 #import baza de date
 
@@ -43,8 +49,9 @@ async def response_endpoint(item: RecomendedItems):
     import pandas as pd
     from sklearn.metrics.pairwise import cosine_similarity
 
-
-    dataset = pd.read_csv('bd_simpla.csv')
+    url='https://drive.google.com/file/d/1YiSTHYl1G7HmgUOO1LBBJkI4sgGNvc-L/view?usp=sharing'
+    url='https://drive.google.com/uc?id=' + url.split('/')[-2]
+    dataset = pd.read_csv(url)
     dataset = dataset.head(500)
     
     import re
